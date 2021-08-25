@@ -1,0 +1,14 @@
+<table class="table">
+  <thead id="scrollable-area">
+    <tr>
+      <th>Event</th>
+      <th fixed-table-headers="scrollable-area" *ngFor="let day of Days" class="week">{{day}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of time; let t = index">
+      <td><span>{{item}}{{t}}</span></td>
+      <td *ngFor="let day of Days; let d = index" (click)="openDialog(item, day)" style="border: outset;" ><span *ngIf="t==d">{{eventData?.eventName}}{{d}}</span></td>
+    </tr>
+  </tbody>
+</table>
