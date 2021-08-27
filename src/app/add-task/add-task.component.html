@@ -2,14 +2,15 @@
 <form [formGroup]="form" >
   <div mat-dialog-content>
     <h2>Add Event</h2>
-    <h4>Date : {{dataStorage.item}}</h4>
-    <h4>Time : {{dataStorage.Days}}</h4>
+    <h4><mat-icon style="margin-right: 10px;">access_time</mat-icon>Date : {{dataStorage[timeIndex]?.days[dayIndex]?.day}} Time : {{dataStorage[timeIndex].time}}</h4>
+    <!-- <h4>Date : </h4>
+    <h4>Time : {{dataStorage[timeIndex].time}}</h4> -->
     <mat-form-field  appearance="fill">
       <mat-label>Event title</mat-label>
       <input matInput name="eventName" formControlName="eventName">
     </mat-form-field>
   </div>
   <div mat-dialog-actions>
-    <button class="btn btn-danger" (click)="addRowData()">Add</button><br><br>
+    <button class="btn btn-warning" (click)="addRowData()">Add</button><br><br>
   </div>
 </form>

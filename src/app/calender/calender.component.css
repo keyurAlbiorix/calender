@@ -1,4 +1,4 @@
-* {
+table {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     list-style: none;
@@ -6,7 +6,12 @@
     outline: none;
     padding: 0;
   }
-  
+  thead {
+    position: sticky;
+    top:0;
+    background-color: #DF720C;
+    text-align: center;
+  }
   a {
     text-decoration: none;
   }
@@ -232,3 +237,29 @@ tbody{
   /* position:absolute; */
     /* z-index:1;
    } */
+   .meeting {
+    display: block;
+    background:#DF720C;
+    text-align: center;
+    margin:3px
+   }
+   .meetingList {
+     margin:5px;
+     z-index: 5;
+     background-color: #DF720C
+    }
+    .meetingList div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .week{
+      color: white;
+      font-family: auto;
+      font-size: large;
+    }
+    .time{
+      text-align: center;
+      width: 8%;
+      font-size: initial;
+    font-weight: 500
+    }

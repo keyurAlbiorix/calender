@@ -9,6 +9,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CalenderComponent,
     AddTaskComponent
   ],
-  entryComponents:[AddTaskComponent],
+  entryComponents:[],
   imports: [
+    MatIconModule,
     FormsModule,
     BrowserModule,
     FormsModule,

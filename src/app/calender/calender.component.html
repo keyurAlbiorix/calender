@@ -1,14 +1,29 @@
 <table class="table">
   <thead id="scrollable-area">
     <tr>
-      <th>Event</th>
-      <th fixed-table-headers="scrollable-area" *ngFor="let day of Days" class="week">{{day}}</th>
+      <th class="week">Calendar</th>
+      <th fixed-table-headers="scrollable-area" *ngFor="let day of Days"  class="week">{{day}}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of time; let t = index">
-      <td><span>{{item}}{{t}}</span></td>
-      <td *ngFor="let day of Days; let d = index" (click)="openDialog(item, day)" style="border: outset;" ><span *ngIf="t==d">{{eventData?.eventName}}{{d}}</span></td>
+
+    <tr *ngFor="let times of timeTemp; let t = index">
+      <td class="time"><span>{{times.time}}</span></td>
+      <td class="w3-table w3-striped" *ngFor="let day of times.days; let d = index" (click)="openDialog(d,t)"
+        style="border: outset;">
+        <div>
+          <ng-container *ngFor="let meetingObj of day.meeting">
+            <div class="meetingList" (click)="stop($event)">
+              <div>
+                <span class="week" style="margin-left: 7px;">
+                  {{meetingObj?.meeting}}
+                </span>
+                <span  class="week"><mat-icon (click)="removeMeeting(meetingObj?.meetingId)">delete</mat-icon></span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
